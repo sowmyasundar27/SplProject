@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+  </head>
+  <body>
+    <%  if(loggedin){  %>
+        <% include partials/headerloggedin.ejs %>
+        <% include partials/navigationloggedin.ejs %>
+    <%  }else{    %>
+        <% include partials/header.ejs %>
+        <% include partials/navigation.ejs %>
+    <%  }  %>
+
+    <main>
+      <section class="banner full">
+  				<article>
+  					<img src="assets/images/slide01.jpg" alt="" />
+  					<div class="inner">
+  						<header>
+  							<p>Eventbrite brings people together through live experiences.</p>
+  							<h2>EventRite</h2>
+  						</header>
+  					</div>
+  				</article>
+  				<article>
+  					<img src="assets/images/slide02.jpg" alt="" />
+  					<div class="inner">
+  						<header>
+  							<p>Discover events that match your passions, or create your own.</p>
+  							<h2>EventRite</h2>
+  						</header>
+  					</div>
+  				</article>
+  				<article>
+  					<img src="assets/images/slide03.jpg"  alt="" />
+  					<div class="inner">
+  						<header>
+  							<p>From music festivals and conventions to pop-up dinners and photography classes</p>
+  							<h2>EventRite</h2>
+  						</header>
+  					</div>
+  				</article>
+  				<article>
+  					<img src="assets/images/slide04.jpg"  alt="" />
+  					<div class="inner">
+  						<header>
+  							<p>Build your event on the most powerful and dynamic platform for event creators.</p>
+  							<h2>EventRite</h2>
+  						</header>
+  					</div>
+  				</article>
+  				<article>
+  					<img src="assets/images/slide05.jpg"  alt="" />
+  					<div class="inner">
+  						<header>
+  							<p>Try us today.</p>
+  							<h2>EventRite</h2>
+  						</header>
+  					</div>
+  				</article>
+  			</section>
+    </main>
+
+
+    <% include partials/footer.ejs %>
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+
+	<% include partials/navigation.ejs %>
+
+    <main>
+	<h2>Welcome to EventRite</h2>
+  <br>
+  <h3>Please enter username and password for login</h3>
+  <form action="/savedConnections?action=siginIn" method="post" id="loginuser" class="container" >
+     <div class="row">
+     <label for="username" class="col-25"> Username</label>
+     <input type="text" class="col-75" id="username" name="username" placeholder="Username" value=""/>
+     </div>
+     <div class="row">
+     <label for="password" class="col-25"> Password </label>
+     <input type="password" class="col-75" id="password" name="password" placeholder="password" value=""/>
+     </div>
+     <div class="row">
+     <input type="submit" value="Login" />
+     </div>
+  </form>
+  <div class=warning>
+    <%= data %>
+  </div>
+
+    </main>
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

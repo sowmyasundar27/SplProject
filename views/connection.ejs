@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  </head>
+  <body>
+    <%  if(loggedin){  %>
+        <% include partials/headerloggedin.ejs %>
+        <% include partials/navigationloggedin.ejs %>
+    <%  }else{    %>
+        <% include partials/header.ejs %>
+        <% include partials/navigation.ejs %>
+    <%  }  %>
+
+
+    <main>
+	<h2> <%=data.connectionName%> </h2>
+	<p><br> <img src="/assets/images/host-user.png" alt="The host user's image">
+	 <ul class="connectiondetails">
+        <li>Hosted by <%=data.connectionHost%></li>
+        <li> <%=data.connectionDate%></li>
+        <li><%=data.connectionTime%></li>
+		<li><%=data.connectionLocation%></li>
+      </ul>
+	 <p>
+	<h3><br>Details</h3>
+	<p><br> <%=data.connectionDetails%>
+
+    </main>
+
+	<aside>
+	Are you going? <br>
+
+	<a href="/savedConnections?action=save&viewConnections=<%=data.connectionID%>&connectionID=<%=data.connectionID%>&rsvp=yes" class="button"> Yes</a>
+	<a href="/savedConnections?action=save&viewConnections=<%=data.connectionID%>&connectionID=<%=data.connectionID%>&rsvp=no" class="button button1">No</a>
+	<a href="/savedConnections?action=save&viewConnections=<%=data.connectionID%>&connectionID=<%=data.connectionID%>&rsvp=maybe" class="button button2">Maybe</a>
+  <%  if(loggedin){  %>
+    <%  if(owner){  %>
+      <br> <br>
+      Make changes to connection? <br>
+      <a href="/newConnection?action=edit&connectionID=<%=data.connectionID%>" class="button button4">Edit Connection</a>
+      <a href="/connections?action=delete&connectionID=<%=data.connectionID%>" class="button button4">Delete Connection</a>
+    <%  }  %>
+  <%  }  %>
+	</aside>
+
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

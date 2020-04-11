@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  </head>
+  <body>
+    <% include partials/headerloggedin.ejs %>
+
+	<% include partials/navigationloggedin.ejs %>
+    <main>
+	<h2><%= user %>'s RSVPed events</h2>
+	<br>
+  <table>
+  <tr>
+    <th>Events</th>
+    <th>Event type</th>
+    <th>Going?</th>
+	<th> </th>
+  </tr>
+  <% if(data.length){
+  var viewConnectionslist = []
+  for(var i = 0;i < data.length;i++) {
+  viewConnectionslist.push(data[i].usersConnection.connectionID) }
+  for(var i = 0;i < data.length;i++) {  %>
+  <tr>
+    <td><%= data[i].usersConnection.connectionName %></td>
+    <td><%= data[i].usersConnection.connectionTopic %></td>
+    <td><%= data[i].userConnectionrsvp %></td>
+	<td><a href="/savedConnections?action=updateRSVP&viewConnections=<%=viewConnectionslist%>&connectionID=<%=data[i].usersConnection.connectionID%>" class="button button3"> Update </a><a href="/savedConnections?action=delete&viewConnections=<%=viewConnectionslist%>&connectionID=<%=data[i].usersConnection.connectionID%>" class="button button3"> Delete</a></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="4">No RSVPed events to display.</td>
+  </tr>
+<% } %>
+</table>
+</main>
+
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

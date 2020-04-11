@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+
+	<% include partials/navigation.ejs %>
+
+    <main>
+      <h2>Welcome to EventRite</h2>
+      <br>
+  <h3>Enter your details to Sign up</h3>
+  <form action="/signup" method="post" id="signupuser" class="container" >
+     <div class="row">
+     <label for="userfirstname" class="col-25"> First Name</label>
+     <input type="text" class="col-75" id="userfirstname" name="userfirstname" placeholder="First Name" value=""/>
+     </div>
+     <div class="row">
+     <label for="userlastname" class="col-25"> Last Name</label>
+     <input type="text" class="col-75" id="userlastname" name="userlastname" placeholder="Last Name" value=""/>
+     </div>
+     <div class="row">
+     <label for="username" class="col-25"> User Name</label>
+     <input type="text" class="col-75" id="username" name="username" placeholder="User Name" value=""/>
+     </div>
+     <div class="row">
+     <label for="userpassword" class="col-25"> Password </label>
+     <input type="password" class="col-75" id="userpassword" name="userpassword" placeholder="Password" value=""/>
+     </div>
+     <div class="row">
+     <label for="useremail" class="col-25"> Email</label>
+     <input type="text" class="col-75" id="useremail" name="useremail" placeholder="Email" value=""/>
+     </div>
+     <div class="row">
+     <label for="useraddress1" class="col-25"> Address Line1</label>
+     <input type="text" class="col-75" id="useraddress1" name="useraddress1" placeholder="Address Line1" value=""/>
+     </div>
+     <div class="row">
+     <label for="useraddress2" class="col-25"> Address Line2</label>
+     <input type="text" class="col-75" id="useraddress2" name="useraddress2" placeholder="Address Line2" value=""/>
+     </div>
+     <div class="row">
+     <label for="usercity" class="col-25"> City</label>
+     <input type="text" class="col-75" id="usercity" name="usercity" placeholder="City" value=""/>
+     </div>
+     <div class="row">
+     <label for="userstate" class="col-25">State</label>
+     <input type="text" class="col-75" id="userstate" name="userstate" placeholder="State" value=""/>
+     </div>
+     <div class="row">
+     <label for="userzip" class="col-25"> Zip</label>
+     <input type="text" class="col-75" id="userzip" name="userzip" placeholder="Zip" value=""/>
+     </div>
+     <div class="row">
+     <label for="usercountry" class="col-25"> Country</label>
+     <input type="text" class="col-75" id="usercountry" name="usercountry" placeholder="Country" value=""/>
+     </div>
+     <div class="row">
+     <input type="submit" value="SignUp" />
+     </div>
+  </form>
+  <div class=warning>
+    <%= data %>
+  </div>
+
+    </main>
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

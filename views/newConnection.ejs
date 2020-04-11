@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+  </head>
+  <body>
+    <%  if(loggedin){  %>
+        <% include partials/headerloggedin.ejs %>
+        <% include partials/navigationloggedin.ejs %>
+    <%  }else{    %>
+        <% include partials/header.ejs %>
+        <% include partials/navigation.ejs %>
+    <%  }  %>
+
+    <main>
+        <%  if(toedit){  %>
+          <form action="/editConnection" method="post" id="editConnection" class="container" >
+             <div class="row">
+             <label for="topic" class="col-25"> Category</label>
+             <input type="text" class="col-75" id="topic" name="topic" placeholder="Topic" value= "<%= connectiondata.connectionTopic %>" />
+             </div>
+             <div class="row">
+             <label for="name" class="col-25"> Name</label>
+             <input type="text" class="col-75" id="name" name="name" placeholder="Name" value= "<%= connectiondata.connectionName %>"/>
+             </div>
+             <div class="row">
+             <label for="details" class="col-25"> Details</label>
+             <input type="text" class="col-75" id="details" name="description" placeholder="Description" value= "<%= connectiondata.connectionDetails %> "/>
+             </div>
+             <div class="row">
+             <label for="where" class="col-25"> Where</label>
+             <input type="text" class="col-75" id="where" name="location" placeholder="Location" value= "<%= connectiondata.connectionLocation %>"/>
+             </div>
+             <div class="row">
+             <label for="when" class="col-25"> When</label>
+             <input type="datetime-local" class="col-75" id="when"  name="datetime"  value="<%= connectiondata.connectionDate %>T<%= connectiondata.connectionTime %>"/>
+             </div>
+             <div class="row">
+             <input type="submit" value="Edit Connection" />
+             </div>
+          </form>
+
+            <%  }else{    %>
+
+	   <form action="/newConnection" method="post" id="newConnection" class="container" >
+        <div class="row">
+        <label for="topic" class="col-25"> Category</label>
+        <input type="text" class="col-75" id="topic" name="topic" placeholder="Topic" value=""/>
+        </div>
+        <div class="row">
+        <label for="name" class="col-25"> Name</label>
+        <input type="text" class="col-75" id="name" name="name" placeholder="Name" value=""/>
+        </div>
+        <div class="row">
+        <label for="details" class="col-25"> Details</label>
+        <input type="text" class="col-75" id="details" name="description" placeholder="Description" value=""/>
+        </div>
+        <div class="row">
+        <label for="where" class="col-25"> Where</label>
+        <input type="text" class="col-75" id="where" name="location" placeholder="Location" value=""/>
+        </div>
+        <div class="row">
+        <label for="when" class="col-25"> When</label>
+        <input type="datetime-local" class="col-75" id="when"  name="datetime"  value=""/>
+        </div>
+        <div class="row">
+        <input type="submit" value="Create Connection" />
+        </div>
+     </form>
+      <%  }  %>
+     <div class=warning>
+       <%= data %>
+     </div>
+
+    </main>
+
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

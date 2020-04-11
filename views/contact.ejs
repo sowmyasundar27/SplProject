@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <%  if(loggedin){  %>
+        <% include partials/headerloggedin.ejs %>
+        <% include partials/navigationloggedin.ejs %>
+    <%  }else{    %>
+        <% include partials/header.ejs %>
+        <% include partials/navigation.ejs %>
+    <%  }  %>
+
+    <main>
+	<h2>Contact Us</h2>
+	<img class="intro" src="assets/images/contact-us.jpg" alt="Contact us image" height="250" width="300">
+	<br><br><p>
+	<br> <h3> Noor Zahara </h3>
+  <br> Program Coordinator
+  <br> <i class="material-icons">email</i><a href = "mailto:nzahara@uncc.edu">nzahara@uncc.edu</a>
+  <br> <i class="material-icons">call</i> +1-7047565895
+	<p>
+    </main>
+
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

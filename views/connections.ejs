@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EventRite</title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  </head>
+
+  <body>
+    <%  if(loggedin){  %>
+        <% include partials/headerloggedin.ejs %>
+        <% include partials/navigationloggedin.ejs %>
+    <%  }else{    %>
+        <% include partials/header.ejs %>
+        <% include partials/navigation.ejs %>
+    <%  }  %>
+
+    <main>
+      <img class="intro" src="/assets/images/college_study.jpg" alt="Students image" height="250" width="300">
+      <% for(var i=0; i<con_category.length; i++){ %>
+            <h2>Our <%=con_category[i]%> Events</h2>
+      <%  for(var j=0;j<conlist.length;j++){   %>
+           <% if(conlist[j].connectionTopic == con_category[i]){ %>
+            <p><br><a href="/connection/<%=conlist[j].connectionID%>"> <%=conlist[j].connectionName%></a><p>
+           <% } %>
+      <% } %>
+       <br>
+      <% } %>
+
+
+
+    </main>
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>
