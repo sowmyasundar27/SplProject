@@ -25,7 +25,7 @@ router.get('/*', function(req,res){
   if(req.session.theUser){
     res.render('newConnection', {data:"", loggedin:true, toedit:false, user:req.session.theUser.userFirstName});
   }else{
-    res.render('login', {data:"Login to add new connection", loggedin:false});
+    res.render('login', {data:"Login to add new event", loggedin:false});
   }
 
 });
